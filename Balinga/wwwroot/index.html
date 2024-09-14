@@ -38,5 +38,137 @@
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Local Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap JS and Popper.js (for components like modals, dropdowns) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ku+Hk84K+T+vW5ozXphCQCNVk2FzZIY8XtCOvXO0xNfQn6m5eQ1ctguClxFGFj9v"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Fade In script -->
+    <script>
+      const elements = document.querySelectorAll(
+        "#about-1, #about-2, #about-3, #photo-1, #photo-2, #photo-3, #photo-4, #photo-5, #photo-6, #photo-7, #photo-8, #photo-9, #quote-1, #quote-2, #check-out-1, #check-out-2, #check-out-3, #check-out-4, #check-out-5, #check-out-6, #connect-1, #connect-2, #connect-3, #highlight-1, #highlight-2, #highlight-3, #highlight-4"
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add 'visible' class when the full element is visible
+              entry.target.classList.add("visible");
+              // Stop observing the element after it has become visible
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1, // Trigger the callback when 10% of the entire element is visible
+        }
+      );
+
+      elements.forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
+
+    <!-- NavLink and footer links active effect -->
+    <script>
+      const navbarLink = document.querySelectorAll(".navbar-link");
+      const footerLink = document.querySelectorAll(".footer-link");
+      const url = window.location.href;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Get the last part of the URL (the page name)
+        const currentPage = url.split("/").pop();
+
+        if (currentPage === "index.html") {
+          // Add active class to nav link
+          navbarLink.forEach((link) => {
+            link.classList.remove("active");
+          });
+          navbarLink[0].classList.add("active");
+
+          // Add active class to footer link
+          footerLink.forEach((link) => {
+            link.classList.remove("active");
+          });
+          footerLink[0].classList.add("active");
+        } else if (!currentPage) {
+          // Add active class to nav link
+          navbarLink.forEach((link) => {
+            link.classList.remove("active");
+          });
+          navbarLink[0].classList.add("active");
+
+          // Add active class to footer link
+          footerLink.forEach((link) => {
+            link.classList.remove("active");
+          });
+          footerLink[0].classList.add("active");
+        }
+      });
+    </script>
+
+    <!-- Navbar script -->
+    <script>
+      const openToggle = document.getElementById("nav-btn");
+      const closeToggle = document.getElementById("nav-btn-extend");
+      const dropdown = document.getElementById("navbar-extend");
+
+      openToggle.addEventListener("change", () => {
+        if (openToggle.checked) {
+          dropdown.classList.add("show");
+          closeToggle.checked = true;
+        } else {
+          dropdown.classList.remove("show");
+        }
+      });
+
+      closeToggle.addEventListener("change", () => {
+        if (!closeToggle.checked) {
+          dropdown.classList.remove("show");
+          openToggle.checked = false;
+        } else {
+          dropdown.classList.add("show");
+        }
+      });
+    </script>
+
+    <!-- Check-out Hover script -->
+    <script>
+      const checkoutLinks = document.querySelectorAll(".check-out-link");
+      const checkoutImages = document.querySelectorAll(".check-out-img");
+
+      //   Adds class to current link and image
+      document.addEventListener("DOMContentLoaded", () => {
+        checkoutImages[0].classList.add("show-img");
+        checkoutLinks[0].classList.add("active-link");
+      });
+
+      checkoutLinks.forEach((link, index) => {
+        // Check if a link has been hovered
+        link.addEventListener("mouseenter", () => {
+          // Removes class from all links and images
+          checkoutLinks.forEach((link) => {
+            if (link.classList.contains("active-link")) {
+              link.classList.remove("active-link");
+            }
+          });
+          checkoutImages.forEach((image) => {
+            if (image.classList.contains("show-img")) {
+              image.classList.remove("show-img");
+            }
+          });
+
+          // Adds class to hovered link and respective image
+          checkoutLinks[index].classList.add("active-link");
+          checkoutImages[index].classList.add("show-img");
+        });
+      });
+    </script>
   </body>
 </html>
