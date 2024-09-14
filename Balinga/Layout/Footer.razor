@@ -1,0 +1,54 @@
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <ul>
+                <li><a class="footer-link" href="/">Home</a></li>
+                <li><a class="footer-link" href="/about">About</a></li>
+                <li><a class="footer-link" href="/info">Info</a></li>
+                <li><a class="footer-link" href="/gallaries">Gallaries</a></li>
+                <li><a class="footer-link" href="/blog">Blog</a></li>
+                <li><a class="footer-link" href="/contact">Contact</a></li>
+                <li><a class="footer-link" href="/videos">Videos</a></li>
+            </ul>
+        </div>
+        <div class="sub-footer">
+            <div class="icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+            <div class="copyright">2024 Balinga</div>
+            <div class="go-up">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- NavLink and footer links active effect -->
+<script>
+    const footerLink = document.querySelectorAll(".footer-link");
+    const url = window.location.href;
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Get the last part of the URL (the page name)
+        const currentPage = url.split("/").pop();
+
+        if (currentPage === "index.html") {
+            // Add active class to footer link
+            footerLink.forEach((link) => {
+                link.classList.remove("active");
+            });
+            footerLink[0].classList.add("active");
+        } else if (!currentPage) {
+            // Add active class to footer link
+            footerLink.forEach((link) => {
+                link.classList.remove("active");
+            });
+            footerLink[0].classList.add("active");
+        }
+    });
+</script>
