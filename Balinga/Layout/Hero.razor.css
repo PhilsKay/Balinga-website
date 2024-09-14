@@ -1,3 +1,31 @@
-.carousel-height {
-    height: 100vh !important;
+/* Hero Section Styling */
+.hero {
+  margin-top: 0 !important;
+}
+.hero-img {
+  display: block;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 90vh !important;
+}
+
+.hero-img-1 {
+  background-image: url(./images/hero-img-1.jpeg);
+}
+
+.hero-img-2 {
+  background-image: url(./images/hero-img-2.jpg);
+}
+
+.hero-img-3 {
+  background-image: url(./images/hero-img-3.jpg);
+}
+
+.hero-img-4 {
+  background-image: url(./images/hero-img-4.jpg);
+}
+
+.hero-img-5 {
+  background-image: url(./images/hero-img-5.jpeg);
 }
