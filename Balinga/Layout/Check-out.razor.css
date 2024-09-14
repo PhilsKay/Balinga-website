@@ -1,0 +1,132 @@
+/* Check-out */
+.check-out .row {
+  align-items: stretch;
+}
+.check-out .col-sm-6 {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.check-out .col-sm-6:nth-child(1) {
+  padding-block: 7rem;
+}
+
+.check-out .col-sm-6 div {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* gap: 8px; */
+}
+
+.check-out-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #a7a6a6;
+  transform: translateY(20vh);
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+
+.check-out-link h3 {
+  font-family: "Quincy Cf", serif;
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+
+.check-out-link h6 {
+  font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.check-out-images {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .check-out .row {
+    flex-direction: row !important;
+    padding: 0 !important;
+  }
+
+  .check-out .col-sm-6 {
+    width: 50%;
+  }
+
+  .check-out-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(-30vw);
+    opacity: 0;
+    transition: all 1s ease-in;
+  }
+
+  .check-out-link h3 {
+    font-size: 33;
+    margin-bottom: 10px;
+  }
+
+  .check-out-images {
+    display: block;
+  }
+
+  .check-out-img {
+    height: 30vw;
+    transform: translateX(30vw);
+    opacity: 0;
+    transition: all 1s ease-in;
+  }
+
+  .check-out-img-1 {
+    background-image: url(./images/check-out-img-1.jpg);
+  }
+
+  .check-out-img-2 {
+    background-image: url(./images/check-out-img-2.jpeg);
+    background-position: center;
+  }
+
+  .check-out-img-3 {
+    background-image: url(./images/check-out-img-3.jpg);
+    background-position: right;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .check-out-images {
+    display: block;
+  }
+
+  .check-out-img {
+    width: 100%;
+    opacity: 0;
+    height: 0;
+    transition: all 0.2s ease-in;
+  }
+
+  .check-out-img-1 {
+    background-image: url(./images/check-out-img-1.jpg);
+  }
+
+  .check-out-img-2 {
+    background-image: url(./images/check-out-img-2.jpeg);
+    background-position: center;
+  }
+
+  .check-out-img-3 {
+    background-image: url(./images/check-out-img-3.jpg);
+    background-position: right;
+  }
+
+  .show-img {
+    height: 40vw;
+    opacity: 1;
+  }
+
+  .active-link {
+    color: #434343;
+  }
+}
