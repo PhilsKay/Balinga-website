@@ -1,0 +1,37 @@
+<!-- Quote ------------------------>
+<section class="section quote">
+    <div class="container">
+        <h6 id="quote-1">- Unknown maybe me</h6>
+        <h2 id="quote-2">
+            Actually, it’s love itself that creates the most beautiful canvas,
+            I’m only choosing the perspective.
+        </h2>
+    </div>
+</section>
+
+<!-- Fade In script -->
+<script>
+    const elements = document.querySelectorAll(
+        "#quote-1, #quote-2"
+    );
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Add 'visible' class when the full element is visible
+                    entry.target.classList.add("visible");
+                    // Stop observing the element after it has become visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.1, // Trigger the callback when 10% of the entire element is visible
+        }
+    );
+
+    elements.forEach((element) => {
+        observer.observe(element);
+    });
+</script>
