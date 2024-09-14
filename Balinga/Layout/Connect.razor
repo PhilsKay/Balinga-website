@@ -1,0 +1,55 @@
+<!-- Connect -->
+<section class="section connect">
+    <div class="">
+        <div class="connect-content">
+            <h1 class="banner__title animatable animatable--large-title animatable--animated animatable--finished"
+                id="connect-1">
+                <span class="spanify">Let's</span>
+                <span class="spanify">set</span>
+                <span class="spanify">out</span>
+                <span class="spanify">on</span>
+                <span class="spanify">a</span>
+                <span class="spanify">photographic</span>
+                <span class="spanify">adventure</span>
+                <span class="spanify">together</span>
+            </h1>
+            <div class="banner__subtitle-wrapper">
+                <h5 class="banner__subtitle animatable animatable--animated animatable--finished" id="connect-2">
+                    <span class="spanify">Portrait</span>
+                    <span class="spanify">of</span>
+                    <span class="spanify">nature</span>
+                    <span class="spanify">and</span>
+                    <span class="spanify">people</span>
+                </h5>
+                <button class="btn" id="connect-3"><a href="/">Let's connect</a></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fade In script -->
+<script>
+    const elements = document.querySelectorAll(
+        "#connect-1, #connect-2, #connect-3"
+    );
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Add 'visible' class when the full element is visible
+                    entry.target.classList.add("visible");
+                    // Stop observing the element after it has become visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.1, // Trigger the callback when 10% of the entire element is visible
+        }
+    );
+
+    elements.forEach((element) => {
+        observer.observe(element);
+    });
+</script>
