@@ -1,0 +1,39 @@
+<!-- Highlight -->
+<section class="section highlight">
+    <div class="highlight-container">
+        <a href="/">
+            <div class="highlight-1" id="highlight-1"></div>
+            <div class="highlight-2" id="highlight-2"></div>
+            <div class="highlight-3" id="highlight-3"></div>
+            <div class="highlight-4" id="highlight-4"></div>
+        </a>
+        <h4>@balinga</h4>
+    </div>
+</section>
+
+<!-- Fade In script -->
+<script>
+    const elements = document.querySelectorAll(
+        "#highlight-1, #highlight-2, #highlight-3, #highlight-4"
+    );
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Add 'visible' class when the full element is visible
+                    entry.target.classList.add("visible");
+                    // Stop observing the element after it has become visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.1, // Trigger the callback when 10% of the entire element is visible
+        }
+    );
+
+    elements.forEach((element) => {
+        observer.observe(element);
+    });
+</script>

@@ -1,0 +1,132 @@
+/* Highlight */
+.highlight-container {
+  padding: 0 !important;
+  height: 200vw;
+}
+.highlight-container a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-container div {
+  height: 100%;
+  background-size: cover;
+  transition: all 1s ease-in;
+}
+
+.highlight-container div:hover {
+  background-size: 110% 110%;
+}
+
+.highlight-container div:nth-child(2),
+.highlight-container div:nth-child(3) {
+  height: 0;
+  transform: translateY(20vh);
+  opacity: 0;
+  transition: all 0.8s ease-in;
+}
+
+.highlight-container div:nth-child(1) {
+  transform: translateX(-80vw);
+  opacity: 0;
+  transition: all 0.8s ease-in;
+}
+
+.highlight-container div:nth-child(2) {
+  transform: translateX(80vw);
+  opacity: 0;
+  transition: all 0.8s ease-in;
+}
+
+.highlight-1 {
+  background-image: url(./images/highlight-1.jpg);
+  background-position: 0 -9rem;
+}
+
+.highlight-2 {
+  background-image: url(./images/highlight-2.jpg);
+  background-position: bottom;
+}
+
+.highlight-3 {
+  background-image: url(./images/highlight-2.jpg);
+}
+.highlight-4 {
+  background-image: url(./images/highlight-2.jpg);
+}
+
+.highlight-container h4 {
+  display: flex;
+  position: relative;
+  top: -117vw;
+  left: 12vw;
+  background-color: #fff;
+  color: #000;
+  /* padding: 20px 40px; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Quincy Cf", serif;
+  font-weight: 400;
+  /* width: 332px; */
+  width: 70vw;
+  height: 125.73px;
+}
+
+@media screen and (min-width: 768px) {
+  .highlight-container h4 {
+    top: -108vw;
+    height: 130px;
+    width: 60vw;
+    left: 20vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .highlight-container {
+    height: 70vh;
+  }
+  .highlight-container h4 {
+    top: -50vh;
+    left: 35vw;
+    width: 30vw;
+    height: 150px;
+  }
+  .highlight-container a {
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .highlight-container div {
+    height: 100%;
+    /* width: 25%; */
+    flex-grow: 1;
+  }
+
+  .highlight-container div:nth-child(2),
+  .highlight-container div:nth-child(3) {
+    height: 70vh;
+    transform: translateY(20vh);
+    opacity: 0;
+    transition: all 0.8s ease-in;
+  }
+
+  .highlight-container div:nth-child(1) {
+    transform: translateX(-20vw);
+    opacity: 0;
+    transition: all 0.8s ease-in;
+  }
+
+  .highlight-container div:nth-child(2) {
+    transform: translateX(30vw);
+    opacity: 0;
+    transition: all 0.8s ease-in;
+  }
+
+  .highlight-1 {
+    background-image: url(./images/highlight-1.jpg);
+    background-position: 0 -7.5rem;
+  }
+}
